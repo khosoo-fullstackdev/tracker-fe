@@ -1,11 +1,8 @@
 export default function Header() {
   return (
-    <div className="navbar">
-      <div className="pl-6">
-        <a
-          href="http://localhost:3000/dashboard"
-          className="btn btn-ghost text-xl"
-        >
+    <div className="navbar px-[120px]">
+      <div className="">
+        <a href="http://localhost:3000/dashboard" className="btn-ghost text-xl">
           <svg
             width="29"
             height="28"
