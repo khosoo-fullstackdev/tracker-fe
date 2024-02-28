@@ -5,16 +5,5 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    extend: {
-      colors: {
-        primary: "#0166FF",
-      },
-      backgroundColor: {
-        primary: "#0166FF",
-      },
-    },
-  },
-
   plugins: [require("daisyui")],
 };

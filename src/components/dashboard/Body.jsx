@@ -1,3 +1,6 @@
+import { Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import React from "react";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -8,9 +11,6 @@ import {
   BarElement,
   Title,
 } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
-import { Bar } from "react-chartjs-2";
-import React from "react";
 
 ChartJS.register(
   ArcElement,
@@ -24,7 +24,7 @@ ChartJS.register(
 
 export default function Body() {
   const doughnutData = {
-    labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+    labels: [],
     datasets: [
       {
         label: "Dataset 1",
@@ -77,18 +77,43 @@ export default function Body() {
     ],
   };
   return (
-    <div className="flex flex-col m-auto bg-slate-200 px-[120px]">
-      <div className="flex items-center py-[24px] justify-between">
-        <div className="w-[384.12px] bg-white h-[219.66px] "></div>
-        <div className="w-[384.12px] bg-white h-[219.66px] "></div>
-        <div className="w-[384.12px] bg-white h-[219.66px] "></div>
-      </div>
-      <div className="flex items-center justify-between">
-        <div className=" flex w-[588px] h-[284px] bg-red-100">
-          <Bar data={barData} />
+    <div className="flex flex-col w-[100%] m-auto px-[120px]">
+      <div className="flex  py-[24px] justify-between">
+        <img
+          className="w-[384.12px] h-[219.66px] rounded-tl-[18px] rounded-bl-[18px]"
+          src="/card.png"
+        ></img>
+        <div className="w-[384.12px] h-[219.66px] rounded-tl-[18px] rounded-bl-[18px]">
+          <div className="flex items-center align-center gap-2 text-slate-900 text-base font-semibold leading-normal">
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle id="Ellipse 124" cx="4" cy="4" r="4" fill="#84CC16" />
+            </svg>
+            Your Income
+          </div>
+          <div className="divider"></div>
         </div>
-        <div className="w-[588px] h-[284px] bg-red-100">
-          <Doughnut data={doughnutData} />
+        <div className="w-[384.12px] h-[219.66px] rounded-tl-[18px] rounded-bl-[18px]"></div>
+      </div>
+      <div className="flex w-[100%] justify-between">
+        <div className="flex flex-col w-[588px] h-[284px] bg-red-100 m-auto">
+          <p className="text-slate-900 text-base font-semibold leading-normal">
+            Income - Expense
+          </p>
+          <div className="divider"></div>
+          <Bar className="h-[100%]" data={barData} />
+        </div>
+        <div className="flex flex-col w-[588px] h-[284px] bg-red-100 m-auto">
+          <p className="text-slate-900 text-base font-semibold leading-normal">
+            Income - Expense
+          </p>
+          <div className="divider"></div>
+          <Doughnut className="h-[100%]" data={doughnutData} />
         </div>
       </div>
       <div></div>

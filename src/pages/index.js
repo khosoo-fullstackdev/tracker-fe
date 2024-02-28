@@ -1,3 +1,9 @@
+import Log from "@/components/Log";
+
 export default function Home() {
-  return;
+  return (
+    <div>
+      <Log />
+    </div>
+  );
 }
