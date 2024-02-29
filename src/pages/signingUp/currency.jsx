@@ -46,9 +46,9 @@ export default function currency() {
             </g>
           </svg>
         </div>
-        <ul data-theme="light" className="steps">
-          <li className="step step-primary">Currency</li>
-          <li className="step step-primary">Balance</li>
+        <ul className="steps">
+          <li className="step step-primary w-10">Currency</li>
+          <li className="step step-primary w-10">Balance</li>
           <li className="step">Finish</li>
         </ul>
       </div>
@@ -77,7 +77,8 @@ export default function currency() {
           Set up your cash Balance
         </p>
         <input
-          value="Wallet"
+          type="text"
+          placeholder="Insert Balance"
           className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
         />
         <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">

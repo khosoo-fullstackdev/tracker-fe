@@ -46,7 +46,7 @@ export default function finish() {
             </g>
           </svg>
         </div>
-        <ul data-theme="light" className="steps">
+        <ul className="steps">
           <li className="step step-primary">Currency</li>
           <li className="step step-primary">Balance</li>
           <li className="step step-primary">Finish</li>

@@ -55,18 +55,22 @@ export default function Register() {
         <div className="flex flex-col gap-4 pb-10">
           <input
             type="text"
+            placeholder="Name"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <input
-            value=""
+            type="text"
+            placeholder="Email"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <input
-            value=""
+            type="text"
+            placeholder="Password"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <input
-            value=""
+            type="text"
+            placeholder="Retype Password"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <button

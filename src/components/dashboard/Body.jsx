@@ -78,7 +78,7 @@ export default function Body() {
   };
   return (
     <div className="flex flex-col w-[100%] m-auto px-[120px]">
-      <div className="flex  py-[24px] justify-between">
+      <div className="flex py-[24px] justify-between">
         <img
           className="w-[384.12px] h-[219.66px] rounded-tl-[18px] rounded-bl-[18px]"
           src="/card.png"

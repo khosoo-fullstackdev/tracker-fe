@@ -54,11 +54,13 @@ export default function Home() {
         </p>
         <div className="flex flex-col gap-4 pb-10">
           <input
-            value="Email"
+            type="text"
+            placeholder="Email"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <input
-            value="Password"
+            type="text"
+            placeholder="Password"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
           <button className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 text-white text-xl font-normal leading-7">
