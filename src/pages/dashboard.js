@@ -1,8 +1,8 @@
-import Header from "@/components/dashboard/Header";
-import Body from "@/components/dashboard/Body";
+import Header from "@/components/Header";
+import Body from "@/components/Body";
 export default function dashboard() {
   return (
-    <div className="container ">
+    <div className=" ">
       <Header />
       <Body />
     </div>

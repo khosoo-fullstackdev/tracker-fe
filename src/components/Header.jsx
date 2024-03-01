@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <div className="navbar px-[120px]">
+    <div className="navbar m-auto w-[1440px] px-[120px] bg-white">
       <div className="">
         <a href="http://localhost:3000/dashboard" className="btn-ghost text-xl">
           <svg
@@ -21,15 +21,15 @@ export default function Header() {
       <div className="navbar hidden lg:flex">
         <ul className="menu menu-horizontal gap-6 px-1">
           <li>
-            <a>Dashboard</a>
+            <a href="http://localhost:3000/dashboard">Dashboard</a>
           </li>
           <li>
-            <a>Record</a>
+            <a href="http://localhost:3000/record">Record</a>
           </li>
         </ul>
       </div>
       <div className="navbar-end gap-6">
-        <button className="btn btn-primary border-0 rounded-full ">
+        <button className="w-[99px] h-8 px-3 bg-blue-600 rounded-[20px] justify-center items-center text-white text-base font-normal leading-normal">
           + Record
         </button>
         <div
