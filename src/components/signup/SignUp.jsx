@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default function Register() {
+export default function SignUp() {
   const router = useRouter();
   return (
     <div className="w-screen h-screen m-auto flex bg-white">
@@ -73,12 +73,16 @@ export default function Register() {
             placeholder="Retype Password"
             className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
           />
-          <button
-            onClick={() => router.push("/signingUp")}
-            className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 text-white text-xl font-normal leading-7"
+          <div
+            className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
+            onClick={() => {
+              setShowLoader("Loading");
+            }}
           >
-            Sign up
-          </button>
+            <div className="text-white text-xl font-normal font-sans leading-7">
+              Sign up
+            </div>
+          </div>
         </div>
         <div className="flex w-[228px] h-8 justify-start gap-6 items-baseline ">
           <p className="text-slate-900 text-base font-normal  leading-normal">

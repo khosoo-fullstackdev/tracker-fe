@@ -1,7 +1,6 @@
 import IncomeCard from "./dashboard/IncomeCard";
 import ExpenseCard from "./dashboard/ExpenseCard";
-import { Doughnut } from "react-chartjs-2";
-import { Bar } from "react-chartjs-2";
+import { BarChart, Donut } from "./Charts";
 import React from "react";
 import {
   Chart as ChartJS,
@@ -40,13 +39,13 @@ export default function Body() {
           <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
             Income - Expense
           </p>
-          <Bar className="h-[532px]" data={barData} />
+          <BarChart />
         </div>
         <div className="flex flex-col w-[588px] h-[100%] m-auto bg-white rounded-xl justify-center">
           <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
             Income - Expense
           </p>
-          <Doughnut className="h-[100%]" data={doughnutData} />
+          <Donut />
         </div>
       </div>
       <div></div>

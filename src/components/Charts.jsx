@@ -22,7 +22,36 @@ ChartJS.register(
   Legend
 );
 
-const doughnutData = {
+export function BarChart() {
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+  ];
+
+  const barData = {
+    labels,
+    datasets: [
+      {
+        label: "Income",
+        data: [27532, 5436, 234, 23623, 234, 6875, 3235],
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+      {
+        label: "Expense",
+        data: [235748, 43732, 24326, 65733, 234235, 6432, 2344],
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+      },
+    ],
+  };
+  return <Bar className="h-[100%]" data={barData} />;
+}
+export function Donut() {
+  const doughnutData = {
     labels: [],
     datasets: [
       {
@@ -49,36 +78,5 @@ const doughnutData = {
       },
     ],
   };
-
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
-
-  const barData = {
-    labels,
-    datasets: [
-      {
-        label: "Income",
-        data: [27532, 5436, 234, 23623, 234, 6875, 3235],
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Expense",
-        data: [235748, 43732, 24326, 65733, 234235, 6432, 2344],
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-};
-export function BarChart (){
-    return <Bar className="h-[100%]" data={barData} />
-    
-}
-export function Donut (){
-      return <Doughnut className="h-[100%]" data={doughnutData} />
+  return <Doughnut className="h-[100%]" data={doughnutData} />;
 }

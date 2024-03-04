@@ -1,7 +1,4 @@
-import { useRouter } from "next/router";
-
-export default function finish() {
-  const router = useRouter();
+export default function BalanceSet() {
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
@@ -47,9 +44,9 @@ export default function finish() {
           </svg>
         </div>
         <ul className="steps">
-          <li className="step step-primary">Currency</li>
-          <li className="step step-primary">Balance</li>
-          <li className="step step-primary">Finish</li>
+          <li className="step step-primary w-10">Currency</li>
+          <li className="step step-primary w-10">Balance</li>
+          <li className="step">Finish</li>
         </ul>
       </div>
       <div className="flex flex-col items-center">
@@ -62,10 +59,10 @@ export default function finish() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="Check">
+              <g id="Coins">
                 <path
                   id="Vector"
-                  d="M28.7076 9.70757L12.7076 25.7076C12.6147 25.8005 12.5044 25.8743 12.383 25.9246C12.2616 25.975 12.1315 26.0009 12.0001 26.0009C11.8687 26.0009 11.7385 25.975 11.6171 25.9246C11.4957 25.8743 11.3854 25.8005 11.2926 25.7076L4.29257 18.7076C4.10493 18.5199 3.99951 18.2654 3.99951 18.0001C3.99951 17.7347 4.10493 17.4802 4.29257 17.2926C4.48021 17.1049 4.7347 16.9995 5.00007 16.9995C5.26543 16.9995 5.51993 17.1049 5.70757 17.2926L12.0001 23.5863L27.2926 8.29257C27.4802 8.10493 27.7347 7.99951 28.0001 7.99951C28.2654 7.99951 28.5199 8.10493 28.7076 8.29257C28.8952 8.48021 29.0006 8.7347 29.0006 9.00007C29.0006 9.26543 28.8952 9.51993 28.7076 9.70757Z"
+                  d="M23 11.1962V10.5C23 7.365 18.2712 5 12 5C5.72875 5 1 7.365 1 10.5V15.5C1 18.1112 4.28125 20.1863 9 20.8075V21.5C9 24.635 13.7288 27 20 27C26.2712 27 31 24.635 31 21.5V16.5C31 13.9125 27.8225 11.835 23 11.1962ZM7 18.3587C4.55125 17.675 3 16.5487 3 15.5V13.7413C4.02 14.4637 5.38625 15.0463 7 15.4375V18.3587ZM17 15.4375C18.6138 15.0463 19.98 14.4637 21 13.7413V15.5C21 16.5487 19.4487 17.675 17 18.3587V15.4375ZM15 24.3587C12.5513 23.675 11 22.5487 11 21.5V20.9788C11.3287 20.9913 11.6613 21 12 21C12.485 21 12.9587 20.9837 13.4237 20.9562C13.9403 21.1412 14.4665 21.2981 15 21.4263V24.3587ZM15 18.7812C14.0068 18.928 13.004 19.0011 12 19C10.996 19.0011 9.99324 18.928 9 18.7812V15.8075C9.99472 15.9371 10.9969 16.0014 12 16C13.0031 16.0014 14.0053 15.9371 15 15.8075V18.7812ZM23 24.7812C21.0106 25.0729 18.9894 25.0729 17 24.7812V21.8C17.9944 21.9337 18.9967 22.0005 20 22C21.0031 22.0014 22.0053 21.9371 23 21.8075V24.7812ZM29 21.5C29 22.5487 27.4487 23.675 25 24.3587V21.4375C26.6138 21.0462 27.98 20.4637 29 19.7412V21.5Z"
                   fill="white"
                 />
               </g>
@@ -74,18 +71,18 @@ export default function finish() {
         </div>
 
         <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
-          Good Job!
+          Set up your cash Balance
         </p>
-
+        <input
+          type="text"
+          placeholder="Insert Balance"
+          className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+        />
         <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">
-          Your very first account has been created. Now continue to dashboard
-          and start tracking
+          How much cash do you have in your wallet?
         </p>
-        <button
-          onClick={() => router.push("/dashboard")}
-          className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl font-normal leading-7"
-        >
-          Go to Dashboard
+        <button className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl font-normal leading-7">
+          Confirm
         </button>
       </div>
     </div>
