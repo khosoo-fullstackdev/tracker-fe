@@ -11,7 +11,7 @@ export default function signUp() {
   return (
     <div className="w-screen h-screen">
       <div
-        className={`flex flex-row h-screen w-full ${
+        className={`flex h-screen w-screen ${
           showLoader == "SignUp" ? "block" : "hidden"
         }`}
       >

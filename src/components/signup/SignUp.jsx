@@ -99,6 +99,7 @@ export default function SignUp({ showLoader, setShowLoader }) {
             Already have account?
           </p>
           <button
+            type="submit"
             onClick={() => router.push("/")}
             className="text-blue-600 text-base font-normal leading-normal"
           >
