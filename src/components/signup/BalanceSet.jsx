@@ -1,4 +1,9 @@
-export default function BalanceSet() {
+export default function BalanceSet({
+  showLoader,
+  setShowLoader,
+  step,
+  setStep,
+}) {
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
@@ -49,7 +54,11 @@ export default function BalanceSet() {
           <li className="step">Finish</li>
         </ul>
       </div>
-      <div className="flex flex-col items-center">
+      <div
+        className={`flex flex-col justify-center items-center gap-4 w-[348px] ${
+          showLoader == "BalanceSet" ? "block" : "hidden"
+        }`}
+      >
         <div className="pb-4">
           <div className="w-12 h-12 p-2 bg-blue-600 rounded-[100px] items-center">
             <svg
@@ -69,19 +78,23 @@ export default function BalanceSet() {
             </svg>
           </div>
         </div>
-
-        <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
+        <h1 className="text-3xl font-semibold text-center text-gray-700">
           Set up your cash Balance
-        </p>
+        </h1>
         <input
           type="text"
-          placeholder="Insert Balance"
-          className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+          placeholder="Enter Your Cash Balance"
+          className="input input-bordered w-full max-w-xs"
         />
-        <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">
+        <p className="text-slate-600 text-left text-xs">
           How much cash do you have in your wallet?
         </p>
-        <button className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl font-normal leading-7">
+        <button
+          className="btn btn-block bg-primary rounded-3xl text-base-100 text-xl hover:text-primary hover:border-primary hover:border-2 hover:bg-base-100"
+          onClick={() => {
+            setShowLoader("Finish");
+          }}
+        >
           Confirm
         </button>
       </div>

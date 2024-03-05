@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
 
-export default function SignUp() {
+export default function SignUp({ showLoader, setShowLoader }) {
   const router = useRouter();
   return (
-    <div className="w-screen h-screen m-auto flex bg-white">
+    <div
+      className={`w-screen h-screen m-auto flex bg-white ${(showLoader =
+        "SignUp")}`}
+    >
       <div className="flex flex-col w-1/2 justify-center items-center">
         <div className="flex w-[92.34px] h-[34.31px] p-[5.40px] justify-start items-center gap-[9.46px]  pb-10">
           <svg
@@ -52,38 +55,45 @@ export default function SignUp() {
         <p className="text-slate-700 text-base font-normal leading-normal pb-10">
           Sign up below to create your Wallet account
         </p>
-        <div className="flex flex-col gap-4 pb-10">
-          <input
-            type="text"
-            placeholder="Name"
-            className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
-          />
-          <input
-            type="text"
-            placeholder="Email"
-            className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
-          />
-          <input
-            type="text"
-            placeholder="Password"
-            className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
-          />
-          <input
-            type="text"
-            placeholder="Retype Password"
-            className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
-          />
-          <div
-            className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
-            onClick={() => {
-              setShowLoader("Loading");
-            }}
-          >
-            <div className="text-white text-xl font-normal font-sans leading-7">
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setShowLoader("loading");
+          }}
+        >
+          <div className="flex flex-col gap-4 pb-10">
+            <input
+              type="text"
+              placeholder="Name"
+              className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+            />
+            <input
+              type="text"
+              placeholder="Password"
+              className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+            />
+            <input
+              type="text"
+              placeholder="Retype Password"
+              className="flex w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center text-neutral-400 text-base font-normal leading-normal"
+            />
+            <button
+              onClick={() => {
+                setStep(step + 1);
+                setShowLoader("CurrencySelect");
+              }}
+              className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex text-white text-xl font-normal  leading-7"
+            >
               Sign up
-            </div>
+            </button>
           </div>
-        </div>
+        </form>
         <div className="flex w-[228px] h-8 justify-start gap-6 items-baseline ">
           <p className="text-slate-900 text-base font-normal  leading-normal">
             Already have account?

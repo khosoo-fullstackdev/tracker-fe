@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-export default function CurrencySelect() {
+export default function CurrencySelect({
+  showLoader,
+  setShowLoader,
+  step,
+  setStep,
+}) {
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
@@ -71,29 +76,39 @@ export default function CurrencySelect() {
             </svg>
           </div>
         </div>
-        <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
-          Select base currency
-        </p>
-        <select className="w-96 h-16 p-4 bg-gray-100 text-gray-800 rounded-lg border border-gray-300">
-          <option className="text-gray-800 font-semibold leading-normal">
-            MNT - Mongolian Tugrik
-          </option>
-          <option className="text-gray-800 font-semibold leading-normal">
-            EUR - European Euro
-          </option>
-          <option className="text-gray-800 font-semibold leading-normal">
-            USD - American Dollar
-          </option>
-        </select>
-        <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">
-          Your base currency should be the one you use most often. All
-          transaction in other currencies will be calculated based on this one{" "}
-        </p>
-        <Link href="/">
-          <button className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center text-white text-xl font-normal leading-7">
+        <div
+          className={`flex flex-col justify-center items-center gap-4 w-[308px] ${
+            showLoader == "CurrencySelect" ? "block" : "hidden"
+          }`}
+        >
+          <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
+            Select base currency
+          </p>
+          <select className="w-96 h-16 p-4 bg-gray-100 text-gray-800 rounded-lg border border-gray-300">
+            <option className="text-gray-800 font-semibold leading-normal">
+              MNT - Mongolian Tugrik
+            </option>
+            <option className="text-gray-800 font-semibold leading-normal">
+              EUR - European Euro
+            </option>
+            <option className="text-gray-800 font-semibold leading-normal">
+              USD - American Dollar
+            </option>
+          </select>
+          <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">
+            Your base currency should be the one you use most often. All
+            transaction in other currencies will be calculated based on this one{" "}
+          </p>
+          <button
+            className="btn btn-block bg-primary rounded-3xl text-base-100 text-xl hover:text-primary hover:border-primary hover:border-2 hover:bg-base-100"
+            onClick={() => {
+              setStep(step + 1);
+              setShowLoader("BalanceSet");
+            }}
+          >
             Confirm
           </button>
-        </Link>
+        </div>
       </div>
     </div>
   );
