@@ -1,13 +1,8 @@
-export default function BalanceSet({
-  showLoader,
-  setShowLoader,
-  step,
-  setStep,
-}) {
+export default function BalanceSet({ setStep }) {
   return (
-    <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
+    <div className="w-screen h-screen m-auto flex flex-col bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
-        <div className="flex w-[107.65px] h-10 p-[6.30px] justify-start items-center gap-[11.03px]">
+        <div className="flex w-[107.65px] h-10 p-[6.30px] justify-center items-center gap-[11.03px]">
           <svg
             width="29"
             height="28"
@@ -54,11 +49,7 @@ export default function BalanceSet({
           <li className="step">Finish</li>
         </ul>
       </div>
-      <div
-        className={`flex flex-col justify-center items-center gap-4 w-[348px] ${
-          showLoader == "BalanceSet" ? "block" : "hidden"
-        }`}
-      >
+      <div className="flex flex-col justify-center items-center gap-4">
         <div className="pb-4">
           <div className="w-12 h-12 p-2 bg-blue-600 rounded-[100px] items-center">
             <svg
@@ -78,21 +69,21 @@ export default function BalanceSet({
             </svg>
           </div>
         </div>
-        <h1 className="text-3xl font-semibold text-center text-gray-700">
+        <p className="text-3xl font-semibold text-center text-gray-700">
           Set up your cash Balance
-        </h1>
+        </p>
         <input
           type="text"
           placeholder="Enter Your Cash Balance"
-          className="input input-bordered w-full max-w-xs"
+          className="w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center flex"
         />
         <p className="text-slate-600 text-left text-xs">
           How much cash do you have in your wallet?
         </p>
         <button
-          className="btn btn-block bg-primary rounded-3xl text-base-100 text-xl hover:text-primary hover:border-primary hover:border-2 hover:bg-base-100"
+          className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center flex text-white text-xl font-normal leading-7 "
           onClick={() => {
-            setShowLoader("Finish");
+            setStep(3);
           }}
         >
           Confirm

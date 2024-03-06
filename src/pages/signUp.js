@@ -5,61 +5,33 @@ import SignUp from "@/components/signup/SignUp";
 import React, { useState } from "react";
 import Loading from "@/components/Loading";
 
-export default function signUp() {
-  const [showLoader, setShowLoader] = useState("signup");
+export default function signup() {
   const [step, setStep] = useState(0);
-  return (
-    <div className="w-screen h-screen">
-      <div
-        className={`flex h-screen w-screen ${
-          showLoader == "SignUp" ? "block" : "hidden"
-        }`}
-      >
-        <SignUp showLoader={showLoader} setShowLoader={setShowLoader} />
-      </div>
-      <div
-        className={`w-screen h-screen ${
-          showLoader == "Loading" ? "block" : "hidden"
-        }`}
-      >
-        <Loading showLoader={showLoader} setShowLoader={setShowLoader} />
-      </div>
-      <div
-        className={`${
-          showLoader == "w-screen h-screen" ? "pt-10 block" : "hidden"
-        }`}
-      >
-        <CurrencySelect
-          setStep={setStep}
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-      <div
-        className={`w-screen h-screen${
-          showLoader == "BalanceSet" ? "pt-10 block" : "hidden"
-        }`}
-      >
-        <BalanceSet
-          setStep={setStep}
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-      <div
-        className={` w-screen h-screen${
-          showLoader == "Finish" ? "pt-10 block" : "hidden"
-        }`}
-      >
-        <Finish
-          setStep={setStep}
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-    </div>
-  );
+
+  switch (step) {
+    case 0:
+      return (
+        <div className={`${step == 0 ? "block" : "hidden"}`}>
+          <SignUp setStep={setStep} />
+        </div>
+      );
+    case 1:
+      return (
+        <div className={`${step == 1 ? "pt-10 block" : "hidden"}`}>
+          <CurrencySelect setStep={setStep} />
+        </div>
+      );
+    case 2:
+      return (
+        <div className={`${step == 2 ? "pt-10 block" : "hidden"}`}>
+          <BalanceSet setStep={setStep} />
+        </div>
+      );
+    default:
+      return (
+        <div>
+          <Finish />
+        </div>
+      );
+  }
 }

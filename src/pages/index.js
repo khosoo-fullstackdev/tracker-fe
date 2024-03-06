@@ -72,7 +72,7 @@ export default function Home() {
             Don’t have account?
           </p>
           <button
-            onClick={() => router.push("/signUp")}
+            onClick={() => router.push("/signup")}
             className="text-blue-600 text-base font-normal leading-normal"
           >
             Sign up

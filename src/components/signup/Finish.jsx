@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default function Finish({ showLoader, setShowLoader, step, setStep }) {
+export default function Finish() {
   const router = useRouter();
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">

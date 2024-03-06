@@ -1,12 +1,10 @@
 import { useRouter } from "next/router";
 
-export default function SignUp({ showLoader, setShowLoader }) {
+export default function SignUp({ setStep }) {
   const router = useRouter();
+
   return (
-    <div
-      className={`w-screen h-screen m-auto flex bg-white ${(showLoader =
-        "SignUp")}`}
-    >
+    <div className={`w-screen h-screen m-auto flex bg-white`}>
       <div className="flex flex-col w-1/2 justify-center items-center">
         <div className="flex w-[92.34px] h-[34.31px] p-[5.40px] justify-start items-center gap-[9.46px]  pb-10">
           <svg
@@ -55,13 +53,7 @@ export default function SignUp({ showLoader, setShowLoader }) {
         <p className="text-slate-700 text-base font-normal leading-normal pb-10">
           Sign up below to create your Wallet account
         </p>
-        <form
-          className="space-y-4"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setShowLoader("loading");
-          }}
-        >
+        <form>
           <div className="flex flex-col gap-4 pb-10">
             <input
               type="text"
@@ -85,8 +77,7 @@ export default function SignUp({ showLoader, setShowLoader }) {
             />
             <button
               onClick={() => {
-                setStep(step + 1);
-                setShowLoader("CurrencySelect");
+                setStep(1);
               }}
               className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex text-white text-xl font-normal  leading-7"
             >
@@ -99,7 +90,6 @@ export default function SignUp({ showLoader, setShowLoader }) {
             Already have account?
           </p>
           <button
-            type="submit"
             onClick={() => router.push("/")}
             className="text-blue-600 text-base font-normal leading-normal"
           >

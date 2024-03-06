@@ -1,11 +1,6 @@
 import Link from "next/link";
 
-export default function CurrencySelect({
-  showLoader,
-  setShowLoader,
-  step,
-  setStep,
-}) {
+export default function CurrencySelect({ setStep }) {
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
@@ -77,9 +72,7 @@ export default function CurrencySelect({
           </div>
         </div>
         <div
-          className={`flex flex-col justify-center items-center gap-4 w-[308px] ${
-            showLoader == "CurrencySelect" ? "block" : "hidden"
-          }`}
+          className={`flex flex-col justify-center items-center gap-4 w-[308px`}
         >
           <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
             Select base currency
@@ -100,10 +93,9 @@ export default function CurrencySelect({
             transaction in other currencies will be calculated based on this one{" "}
           </p>
           <button
-            className="btn btn-block bg-primary rounded-3xl text-base-100 text-xl hover:text-primary hover:border-primary hover:border-2 hover:bg-base-100"
+            className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] flex justify-center items-center text-white text-xl font-normal leading-7"
             onClick={() => {
-              setStep(step + 1);
-              setShowLoader("BalanceSet");
+              setStep(2);
             }}
           >
             Confirm
