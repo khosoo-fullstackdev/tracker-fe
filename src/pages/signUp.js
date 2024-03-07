@@ -7,6 +7,7 @@ import Loading from "@/components/Loading";
 
 export default function signup() {
   const [step, setStep] = useState(0);
+  //object state
 
   switch (step) {
     case 0:
