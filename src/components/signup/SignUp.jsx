@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import SignUpLogin from "@/icons/SignUpLogin";
 import { useState } from "react";
 
+
 export default function SignUp({ setStep }) {
   const router = useRouter();
   const BE_URL = "http://localhost:4000/signup";

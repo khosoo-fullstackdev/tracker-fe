@@ -1,30 +1,20 @@
+import HeaderGeldIcon from "@/icons/HeaderGeldIcon";
+import Link from "next/link";
 export default function Header() {
   return (
     <div className="navbar m-auto w-[1440px] px-[120px] bg-white">
       <div className="">
-        <a href="http://localhost:3000/dashboard" className="btn-ghost text-xl">
-          <svg
-            width="29"
-            height="28"
-            viewBox="0 0 29 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="Vector"
-              d="M18.8296 9.36772V0.300781H9.56514V9.36772H0.300659V18.6322H9.56514V27.6991H18.8296V18.6322H28.0941V9.36772H18.8296ZM18.8296 18.4347H9.56514V9.56665H18.8296V18.4347Z"
-              fill="#0166FF"
-            />
-          </svg>
-        </a>
+        <Link href="/dashboard">
+          <HeaderGeldIcon />
+        </Link>
       </div>
       <div className="navbar hidden lg:flex">
         <ul className="menu menu-horizontal gap-6 px-1">
           <li>
-            <a href="http://localhost:3000/dashboard">Dashboard</a>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <a href="http://localhost:3000/record">Record</a>
+            <Link href="/record">Record</Link>
           </li>
         </ul>
       </div>
