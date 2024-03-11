@@ -51,7 +51,7 @@ export default function CurrencySelect({ setStep }) {
           </select>
           <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">
             Your base currency should be the one you use most often. All
-            transaction in other currencies will be calculated based on this one{" "}
+            transaction in other currencies will be calculated based on this one
           </p>
           <button
             className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] flex justify-center items-center text-white text-xl font-normal leading-7"
