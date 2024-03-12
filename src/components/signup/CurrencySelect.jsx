@@ -40,13 +40,13 @@ export default function CurrencySelect({ setStep }) {
           </p>
           <select className="w-96 h-16 p-4 bg-gray-100 text-gray-800 rounded-lg border border-gray-300">
             <option className="text-gray-800 font-semibold leading-normal">
-              MNT - Mongolian Tugrik
+              MNT
             </option>
             <option className="text-gray-800 font-semibold leading-normal">
-              EUR - European Euro
+              EUR
             </option>
             <option className="text-gray-800 font-semibold leading-normal">
-              USD - American Dollar
+              USD
             </option>
           </select>
           <p className="w-96 text-slate-600 pt-[12px] text-xs font-normal leading-none pb-8">

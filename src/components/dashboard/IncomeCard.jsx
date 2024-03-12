@@ -3,7 +3,7 @@ import IncDot from "@/icons/IncDot";
 
 export default function IncomeCard() {
   return (
-    <div className="w-[384.12px] h-[219.66px] bg-white rounded-xl flex-col justify-between ">
+    <div className="w-[384.12px] bg-white rounded-xl flex-col justify-between ">
       <div className="flex items-center h-14 px-6 py-4 border-b gap-2 text-slate-900 text-base font-semibold leading-normal">
         <IncDot />
         <p className="text-slate-900 text-base font-semibold leading-normal">

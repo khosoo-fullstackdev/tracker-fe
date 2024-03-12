@@ -36,14 +36,14 @@ export default function Body() {
           <IncomeCard />
           <ExpenseCard />
         </div>
-        <div className="flex w-[100%] h-[284px] justify-between">
-          <div className="flex flex-col w-[588px] m-auto bg-white rounded-xl justify-center">
+        <div className="flex w-[100%]  justify-between">
+          <div className="flex flex-col w-[588px] h-[284px] m-auto bg-white rounded-xl justify-center">
             <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
               Income - Expense
             </p>
             <BarChart />
           </div>
-          <div className="flex flex-col w-[588px] h-[100%] m-auto bg-white rounded-xl justify-center">
+          <div className="flex flex-col w-[588px] h-[284px] m-auto bg-white rounded-xl justify-center">
             <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
               Income - Expense
             </p>

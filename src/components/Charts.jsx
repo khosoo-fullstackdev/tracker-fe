@@ -31,8 +31,12 @@ export function BarChart() {
     "May",
     "June",
     "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
-
   const barData = {
     labels,
     datasets: [
@@ -48,8 +52,9 @@ export function BarChart() {
       },
     ],
   };
-  return <Bar className="h-[100%]" data={barData} />;
+  return <Bar className="" data={barData} />;
 }
+
 export function Donut() {
   const doughnutData = {
     labels: [],
@@ -78,5 +83,5 @@ export function Donut() {
       },
     ],
   };
-  return <Doughnut className="h-[100%]" data={doughnutData} />;
+  return <Doughnut data={doughnutData} />;
 }
