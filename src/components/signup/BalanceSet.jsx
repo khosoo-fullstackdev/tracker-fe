@@ -1,6 +1,28 @@
 import SignUpGeld from "@/icons/SignUpGeld";
 
 export default function BalanceSet({ setStep }) {
+  const BE_URL = "http://localhost:4000/signup";
+  const handleBalance = async () => {
+    const data = {
+      email: userEmail,
+      password: userPassword,
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, options);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    if (FETCHED_JSON.success == "true") {
+      router.push("/dashboard");
+    } else {
+      alert("wrong password or email");
+    }
+  };
   return (
     <div className="w-screen h-screen m-auto flex flex-col bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
