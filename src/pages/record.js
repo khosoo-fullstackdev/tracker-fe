@@ -3,59 +3,88 @@ import AddRecord from "@/components/record/AddRecord";
 
 export default function Record() {
   return (
-    <div className="bg-gray-200">
+    <div className="w-screen flex flex-col m-auto">
       <Header />
-      <div className="container ">
-        <div className="w-[282px] h-[1080px] px-4 py-6 bg-gray-50 rounded-xl border border-gray-200 flex-col justify-start items-start gap-6 inline-flex">
-          <div className="w-[250px] h-[88px] flex-col justify-start items-start gap-6 inline-flex">
-            <div className="text-black text-2xl font-semibold font-sans leading-loose">
+      <div className="flex flex-col w-screen bg-gray-100 ">
+        <div className="w-[1440px] m-auto px-[120px]">
+          <div className="flex flex-col w-72 px-4 py-6 gap-6 bg-gray-50 rounded-xl border border-gray-200 ">
+            <p className="text-black text-2xl font-semibold leading-loose">
               Records
-            </div>
-            <AddRecord />
-          </div>
-          <div className="w-[250px] h-8 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex mt-4">
-            <input
-              type="text"
-              className="grow shrink basis-0 text-neutral-400 text-base font-normal font-sans leading-normal outline-none bg-gray-100 "
-              placeholder="Search"
-            />
-          </div>
-          <div className="w-[109px] h-36 flex-col justify-start items-start gap-4 inline-flex">
-            <div className="text-gray-800 text-base font-semibold font-sans leading-normal">
-              Types
-            </div>
-            <div className="w-[109px] relative"></div>
-          </div>
-          <div className="w-[250px] h-[520px] flex-col justify-start items-start gap-4 inline-flex">
-            <div className="w-[250px] h-8 justify-between items-center inline-flex">
-              <div className="text-gray-800 text-base font-semibold font-sans leading-normal">
-                Category
+            </p>
+            <button className="w-64 h-8 px-3 bg-blue-600 rounded-2xl justify-center items-center text-white text-base font-normal leading-normal">
+              + Add
+            </button>
+            <div className="flex w-28 h-36 flex-col justify-start items-start gap-4 ">
+              <div className="text-gray-800 text-base font-semibold leading-normal">
+                Types
               </div>
-              <div className="w-[61px] px-3 rounded-[20px] justify-center items-center gap-1 flex">
-                <div className="opacity-20 text-gray-800 text-base font-normal font-sans leading-normal">
-                  Clear
+              <div className="w-28">
+                <div className="flex h-8 px-3 rounded-lg justify-start items-center text-gray-800 text-base font-normal gap-4 leading-normal">
+                  <input
+                    type="checkbox"
+                    defaultChecked
+                    className="checkbox checkbox-primary"
+                  />
+                  All
+                </div>
+                <div className="flex h-8 px-3 rounded-lg justify-start items-center text-gray-800 text-base font-normal gap-4 leading-normal">
+                  <input
+                    type="checkbox"
+                    defaultChecked
+                    className="checkbox checkbox-primary"
+                  />
+                  Income
+                </div>
+                <div className="flex h-8 px-3 rounded-lg justify-start items-center text-gray-800 text-base font-normal gap-4 leading-normal">
+                  <input
+                    type="checkbox"
+                    defaultChecked
+                    className="checkbox checkbox-primary"
+                  />
+                  Expense
                 </div>
               </div>
             </div>
-            <div className="self-stretch h-[472px] flex-col justify-start items-start gap-2 flex"></div>
-            <div></div>
-          </div>
-          <div></div>
-        </div>
-        <div className="px-4 py-6 flex flex-col gap-6">
-          <div className="w-[894px] h-12 rounded-xl justify-between items-center inline-flex"></div>
-          <div className="w-[894px] h-[980px] flex-col justify-start items-start gap-6 inline-flex">
-            <div className="w-[894px] h-[404px] flex-col justify-start items-start gap-3 inline-flex">
-              <div className="text-black text-base font-semibold font-sans leading-normal">
-                Today
+            <div>
+              <div className="flex justify-between">
+                <p className="text-gray-800 text-base font-semibold leading-normal">
+                  Category
+                </p>
+                <p className="opacity-20 text-gray-800 text-base font-normal leading-normal">
+                  Clear
+                </p>
               </div>
-              <div className="flex flex-col gap-3"></div>
-            </div>
-            <div className="w-[894px] h-[404px] flex-col justify-start items-start gap-3 inline-flex">
-              <div className="text-black text-base font-semibold font-sans leading-normal">
-                Yesterday
+              <div className="Catagories"></div>
+              <div className="flex flex-col w-[100%] gap-4 ">
+                <p className="text-gray-800 text-base font-semibold leading-normal">
+                  Amount Range
+                </p>
+                <div className="flex justify-between">
+                  <input
+                    type="text"
+                    placeholder="0"
+                    className="w-28 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 text-slate-900 text-base font-normal leading-normal"
+                  />
+                  <input
+                    type="text"
+                    placeholder="10000000"
+                    className="w-28 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 text-slate-900 text-base font-normal leading-normal"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={10000000}
+                    className="range range-primary"
+                  />
+                  <div className="w-full flex justify-between text-xs px-2">
+                    <span>0</span>
+                    <span>10,000,000</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col gap-3"></div>
             </div>
           </div>
         </div>
@@ -63,3 +92,4 @@ export default function Record() {
     </div>
   );
 }
+

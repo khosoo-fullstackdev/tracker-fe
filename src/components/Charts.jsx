@@ -80,6 +80,7 @@ export function Donut() {
         ],
         borderWidth: 1,
         hoverOffset: 4,
+        h: 240,
       },
     ],
   };

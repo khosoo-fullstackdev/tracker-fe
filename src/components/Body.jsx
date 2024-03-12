@@ -36,14 +36,14 @@ export default function Body() {
           <IncomeCard />
           <ExpenseCard />
         </div>
-        <div className="flex w-[100%]  justify-between">
-          <div className="flex flex-col w-[588px] h-[284px] m-auto bg-white rounded-xl justify-center">
+        <div className="flex h-[340px] justify-between">
+          <div className="flex flex-col w-[588px] h-[340px] m-auto bg-white rounded-xl justify-center">
             <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
               Income - Expense
             </p>
             <BarChart />
           </div>
-          <div className="flex flex-col w-[588px] h-[284px] m-auto bg-white rounded-xl justify-center">
+          <div className="flex flex-col w-[588px] h-[340px] m-auto bg-white rounded-xl justify-center">
             <p className="text-slate-900 text-base font-semibold leading-normal h-14 px-6 py-4 border-b border-slate-200 gap-2">
               Income - Expense
             </p>
@@ -51,7 +51,7 @@ export default function Body() {
           </div>
         </div>
         <div className="w-[100%] mt-[26px] flex flex-col bg-white rounded-xl ">
-          <p className=" h-14 px-6 py-4 border-b border-slate-200 justify-center gap-2 text-slate-900 text-base font-semibold font-['Roboto'] leading-normal">
+          <p className=" h-14 px-6 py-4 border-b border-slate-200 justify-center gap-2 text-slate-900 text-semibold leading-normal">
             Last Records
           </p>
           <div className="w-[100%] h-20 px-6 py-5 bg-white border-b border-gray-200 justify-between items-center flex">

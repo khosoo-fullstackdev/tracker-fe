@@ -22,3 +22,9 @@
   margin: auto;
   max-width: 1440px;
 }
+
+.checkbox {
+  border-radius: 50%;
+  border-color: #374151;
+
+}
