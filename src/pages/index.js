@@ -2,17 +2,16 @@ import SignUpLogin from "@/icons/SignUpLogin";
 import { useRouter } from "next/router";
 import { useState } from "react";
 export default function Home() {
-  const router = useRouter();
-  const BE_URL = "http://localhost:4000/signin";
+  const BE_URL = "http://localhost:4000/login";
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleLoginUser = async () => {
     const data = {
       email: userEmail,
       password: userPassword,
     };
-
     const options = {
       method: "POST",
       headers: {
@@ -22,10 +21,18 @@ export default function Home() {
     };
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
-    if (FETCHED_JSON.success == "true") {
-      router.push("/dashboard");
+    console.log("fethc", FETCHED_JSON);
+
+    const userId = FETCHED_JSON.result.rows[0].id;
+
+    localStorage.setItem("userId", userId);
+
+    console.log("user ID", localStorage.getItem("userId"));
+
+    if (FETCHED_JSON.result.rowCount == 1) {
+      router.push("/");
     } else {
-      alert("wrong password or email");
+      alert("Email or password is incorrect");
     }
   };
   return (
@@ -57,7 +64,7 @@ export default function Home() {
           />
           <button
             onClick={() => {
-              handleLogin();
+              handleLoginUser();
             }}
             className="flex w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 text-white text-xl font-normal leading-7"
           >
