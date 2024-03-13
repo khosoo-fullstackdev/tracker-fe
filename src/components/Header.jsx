@@ -11,10 +11,10 @@ export default function Header() {
       </div>
       <div className="navbar hidden lg:flex">
         <ul className="menu menu-horizontal gap-6 px-1">
-          <li>
+          <li className="text-center text-slate-900 text-base font-normal  leading-normal">
             <Link href="/dashboard">Dashboard</Link>
           </li>
-          <li>
+          <li className="text-center text-slate-900 text-base font-semibold  leading-normal">
             <Link href="/record">Record</Link>
           </li>
         </ul>

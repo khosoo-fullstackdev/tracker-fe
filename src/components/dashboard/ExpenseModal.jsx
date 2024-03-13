@@ -7,7 +7,7 @@ export function ExpenseModal() {
 
   return (
     <div className="w-[792px] h-content mx-auto">
-      <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center inline-flex">
+      <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 flex justify-between items-center">
         <div className="text-slate-900 text-xl font-semibold font-sans leading-7">
           Add Record
         </div>
