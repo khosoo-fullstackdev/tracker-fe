@@ -1,16 +1,21 @@
+import AddRecordModalButton from "../AddRecordModal";
+import CloseModalIcon from "@/icons/CloseModalIcon";
 import { useState } from "react";
+
 export function ExpenseModal() {
   const [tab, setTab] = useState("expense");
 
   return (
     <div className="w-[792px] h-content mx-auto">
-      <div className="flex w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center">
+      <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center inline-flex">
         <div className="text-slate-900 text-xl font-semibold font-sans leading-7">
           Add Record
         </div>
-        <div className="modal-action modal">
-          <form method="dialog" className="flex justify-center items-center">
-            <button className="">X</button>
+        <div className="modal-action flex justify-center items-center">
+          <form method="dialog">
+            <button className="w-6 h-6">
+              <CloseModalIcon />
+            </button>
           </form>
         </div>
       </div>
@@ -106,7 +111,9 @@ export function ExpenseModal() {
               </div>
             </div>
           </div>
-          <div className="self-stretch h-10 rounded-[20px] justify-center items-center gap-1 inline-flex"></div>
+          <div className="self-stretch h-10 rounded-[20px] justify-center items-center gap-1 inline-flex">
+            <AddRecordModalButton tab={tab} setTab={setTab} />
+          </div>
         </div>
       </div>
       <div className="w-[396px] h-[500px] px-6 pt-11 pb-3 bg-white flex-col justify-start items-start gap-5 inline-flex">

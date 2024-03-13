@@ -1,4 +1,5 @@
 import HeaderGeldIcon from "@/icons/HeaderGeldIcon";
+import { ExpenseModal } from "./dashboard/ExpenseModal";
 import Link from "next/link";
 export default function Header() {
   return (
@@ -19,9 +20,20 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end gap-6">
-        <button className="w-[99px] h-8 px-3 bg-blue-600 rounded-[20px] justify-center items-center text-white text-base font-normal leading-normal">
-          + Record
-        </button>
+        <div>
+          <button
+            className="w-[99px] h-8 px-3 bg-blue-600 rounded-[20px] justify-center items-center text-white text-base font-normal leading-normal"
+            onClick={() => document.getElementById("ExpenseModal").showModal()}
+          >
+            + Record
+          </button>
+          <dialog id="ExpenseModal" className="modal">
+            <div className="modal-box w-[870px] max-w-5xl">
+              <ExpenseModal />
+            </div>
+          </dialog>
+        </div>
+
         <div
           tabIndex={0}
           role="button"

@@ -5,15 +5,13 @@ export default function Record() {
   return (
     <div className="w-screen flex flex-col m-auto">
       <Header />
-      <div className="flex flex-col w-screen bg-gray-100 ">
+      <div className="flex flex-col w-screen pt-7 bg-gray-100 ">
         <div className="w-[1440px] m-auto px-[120px]">
           <div className="flex flex-col w-72 px-4 py-6 gap-6 bg-gray-50 rounded-xl border border-gray-200 ">
             <p className="text-black text-2xl font-semibold leading-loose">
               Records
             </p>
-            <button className="w-64 h-8 px-3 bg-blue-600 rounded-2xl justify-center items-center text-white text-base font-normal leading-normal">
-              + Add
-            </button>
+            <AddRecord />
             <div className="flex w-28 h-36 flex-col justify-start items-start gap-4 ">
               <div className="text-gray-800 text-base font-semibold leading-normal">
                 Types
@@ -92,4 +90,3 @@ export default function Record() {
     </div>
   );
 }
-
