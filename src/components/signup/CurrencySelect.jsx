@@ -1,7 +1,31 @@
-import Link from "next/link";
 import SignUpGeld from "@/icons/SignUpGeld";
+import { useState } from "react";
 
-export default function CurrencySelect({ setStep }) {
+export default function CurrencySelect({ setStep, userId }) {
+  const BE_URL = "http://localhost:4000/currency-set";
+  const [currency, setCurrency] = useState("");
+
+  const handleCurrency = async () => {
+    const data = {
+      currency: currency,
+      userid: { userId },
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, options);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    if (FETCHED_JSON.message == "success") {
+      setStep(2);
+    } else {
+      alert("wrong password or email");
+    }
+  };
   return (
     <div className="w-screen h-screen m-auto flex flex-col pt-10 bg-white gap-[141px] ">
       <div className="flex flex-col items-center gap-12">
@@ -38,7 +62,12 @@ export default function CurrencySelect({ setStep }) {
           <p className="text-slate-900 text-2xl font-semibold leading-loose pb-6">
             Select base currency
           </p>
-          <select className="w-96 h-16 p-4 bg-gray-100 text-gray-800 rounded-lg border border-gray-300">
+          <select
+            onChange={(e) => {
+              setCurrency(e.target.value);
+            }}
+            className="w-96 h-16 p-4 bg-gray-100 text-gray-800 rounded-lg border border-gray-300"
+          >
             <option className="text-gray-800 font-semibold leading-normal">
               MNT
             </option>
@@ -56,7 +85,7 @@ export default function CurrencySelect({ setStep }) {
           <button
             className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] flex justify-center items-center text-white text-xl font-normal leading-7"
             onClick={() => {
-              setStep(2);
+              handleCurrency();
             }}
           >
             Confirm

@@ -2,10 +2,11 @@ import SignUpLogin from "@/icons/SignUpLogin";
 import { useRouter } from "next/router";
 import { useState } from "react";
 export default function Home() {
-  const BE_URL = "http://localhost:4000/login";
+  const router = useRouter();
+  const BE_URL = "http://localhost:4000/signin";
+
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const router = useRouter();
 
   const handleLoginUser = async () => {
     const data = {
@@ -21,16 +22,9 @@ export default function Home() {
     };
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
-    console.log("fethc", FETCHED_JSON);
 
-    const userId = FETCHED_JSON.result.rows[0].id;
-
-    localStorage.setItem("userId", userId);
-
-    console.log("user ID", localStorage.getItem("userId"));
-
-    if (FETCHED_JSON.result.rowCount == 1) {
-      router.push("/");
+    if (FETCHED_JSON == "true") {
+      router.push("/dashboard");
     } else {
       alert("Email or password is incorrect");
     }

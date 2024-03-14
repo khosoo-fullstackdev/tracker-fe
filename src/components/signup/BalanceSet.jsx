@@ -1,11 +1,14 @@
 import SignUpGeld from "@/icons/SignUpGeld";
+import { useState } from "react";
 
 export default function BalanceSet({ setStep }) {
-  const BE_URL = "http://localhost:4000/signup";
+  const BE_URL = "http://localhost:4000/balance-set";
+  const [balance, setBalance] = useState();
+
   const handleBalance = async () => {
     const data = {
-      email: userEmail,
-      password: userPassword,
+      balance: balance,
+      userid: userId,
     };
 
     const options = {
@@ -18,7 +21,7 @@ export default function BalanceSet({ setStep }) {
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
     if (FETCHED_JSON.success == "true") {
-      router.push("/dashboard");
+      setStep(2);
     } else {
       alert("wrong password or email");
     }

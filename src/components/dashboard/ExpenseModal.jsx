@@ -7,7 +7,7 @@ export function ExpenseModal() {
 
   return (
     <div className="w-[792px] h-content mx-auto">
-      <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 flex justify-between items-center">
+      <div className="w-[792px] h-[68px] bg-white border-b border-slate-200 flex justify-between items-center">
         <div className="text-slate-900 text-xl font-semibold font-sans leading-7">
           Add Record
         </div>
@@ -19,7 +19,7 @@ export function ExpenseModal() {
           </form>
         </div>
       </div>
-      <div className="w-[396px] h-[500px] px-6 pt-5 bg-white flex-col justify-start items-start gap-5 inline-flex">
+      <div className="w-[396px] h-[500px] bg-white flex-col justify-start items-start gap-5 inline-flex">
         <div className="self-stretch bg-gray-100 rounded-[100px] justify-start items-start gap-1 inline-flex">
           <div
             className={`grow shrink basis-0 h-10 px-3  ${
@@ -75,9 +75,7 @@ export function ExpenseModal() {
                 </div>
               </div>
               <select className="select select-bordered w-[348px] h-12 bg-gray-50">
-                <option disabled selected>
-                  Choose
-                </option>
+                <option defaultValue={"Select category"}>Choose</option>
                 <option>Han Solo</option>
                 <option>Greedo</option>
               </select>
@@ -116,7 +114,7 @@ export function ExpenseModal() {
           </div>
         </div>
       </div>
-      <div className="w-[396px] h-[500px] px-6 pt-11 pb-3 bg-white flex-col justify-start items-start gap-5 inline-flex">
+      <div className="w-[396px] h-[500px] px-6 pt-11 bg-white flex-col justify-start items-start gap-5 inline-flex">
         <div className="self-stretch h-[376px] flex-col justify-start items-start gap-12 flex">
           <div className="self-stretch h-12 rounded-lg flex-col justify-center items-start flex gap-2">
             <div className="h-[18px] justify-start items-center inline-flex">
@@ -125,9 +123,7 @@ export function ExpenseModal() {
               </div>
             </div>
             <select className="select select-bordered w-[348px] h-12 bg-gray-50">
-              <option disabled selected>
-                Choose
-              </option>
+              <option defaultValue={"Select category"}>Choose</option>
               <option>Han Solo</option>
               <option>Greedo</option>
             </select>
