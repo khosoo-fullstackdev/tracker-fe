@@ -8,7 +8,7 @@ export default function CurrencySelect({ setStep, userId }) {
   const handleCurrency = async () => {
     const data = {
       currency: currency,
-      userid: { userId },
+      userid: userId,
     };
 
     const options = {

@@ -1,7 +1,7 @@
 import SignUpGeld from "@/icons/SignUpGeld";
 import { useState } from "react";
 
-export default function BalanceSet({ setStep }) {
+export default function BalanceSet({ setStep, userId }) {
   const BE_URL = "http://localhost:4000/balance-set";
   const [balance, setBalance] = useState();
 
@@ -20,8 +20,8 @@ export default function BalanceSet({ setStep }) {
     };
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
-    if (FETCHED_JSON.success == "true") {
-      setStep(2);
+    if (FETCHED_JSON.message == "success") {
+      setStep(3);
     } else {
       alert("wrong password or email");
     }
@@ -60,6 +60,9 @@ export default function BalanceSet({ setStep }) {
           Set up your cash Balance
         </p>
         <input
+          onChange={(e) => {
+            setBalance(e.target.value);
+          }}
           type="text"
           placeholder="Enter Your Cash Balance"
           className="w-96 h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center flex"
@@ -70,7 +73,7 @@ export default function BalanceSet({ setStep }) {
         <button
           className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center flex text-white text-xl font-normal leading-7 "
           onClick={() => {
-            setStep(3);
+            handleBalance();
           }}
         >
           Confirm

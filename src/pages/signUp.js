@@ -37,7 +37,7 @@ export default function signup() {
     if (FETCHED_JSON == "true") {
       setStep(1);
     } else {
-      alert(aaaaaa);
+      alert("aaaaaa");
     }
   };
   //object state
